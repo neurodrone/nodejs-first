@@ -9,7 +9,8 @@ function start(route, handle) {
       route(handle, pathname);
 
       response.writeHead(200, { "Content-type": "text/html" });
-      response.write("Hello World.");
+      var content = route(handle, pathname);
+      response.write(content);
       response.end();
 		}).listen(8888);
 
